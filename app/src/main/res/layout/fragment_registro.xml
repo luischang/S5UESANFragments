@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.RegistroFragment">
+
+
+
+    <EditText
+        android:id="@+id/etFullName"
+        android:layout_width="339dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/valetfullname"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="353dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="8dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:helperText="Required"
+        app:helperTextEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFullName"
+        app:passwordToggleEnabled="false"
+        app:startIconDrawable="@android:drawable/ic_dialog_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/rgGender"
+        android:layout_width="341dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <RadioButton
+            android:id="@+id/rbtMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/valrbtmale" />
+
+        <RadioButton
+            android:id="@+id/rbtFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/valrbtfemale" />
+
+        <RadioButton
+            android:id="@+id/rbtOthers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/valrbtothers" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/chkCar"
+        android:layout_width="111dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/valchkcar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnCountry" />
+
+    <CheckBox
+        android:id="@+id/chkLicense"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/valchklicense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnCountry" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="338dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/valbtnsave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chkLicense" />
+
+    <Spinner
+        android:id="@+id/spnCountry"
+        android:layout_width="342dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgGender" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
