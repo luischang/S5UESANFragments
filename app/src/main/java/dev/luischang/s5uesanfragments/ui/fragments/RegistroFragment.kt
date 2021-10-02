@@ -21,8 +21,8 @@ class RegistroFragment : Fragment() {
         val etFullName: EditText = view.findViewById(R.id.etFullName)
         val etEmail: EditText = view.findViewById(R.id.etEmail)
         val rgGender: RadioGroup = view.findViewById(R.id.rgGender)
-        val chkLicense: CheckBox = view.findViewById(R.id.chkLicense)
-        val chkCar: CheckBox = view.findViewById(R.id.chkCar)
+        //val chkLicense: CheckBox = view.findViewById(R.id.chkLicense)
+        //val chkCar: CheckBox = view.findViewById(R.id.chkCar)
 
         ArrayAdapter.createFromResource(
             requireContext(),
@@ -33,7 +33,37 @@ class RegistroFragment : Fragment() {
             spnCountry.adapter = adapter
         }
 
+        val btnSave: Button = view.findViewById(R.id.btnSave)
+        var spnCountryValue=""
 
+        spnCountry.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                spnCountryValue = parent?.getItemAtPosition(position).toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+        }
+
+        btnSave.setOnClickListener {
+            var fullNameValue = etFullName.text
+            var emailValue = etEmail.text
+            val intSelectButton = rgGender!!.checkedRadioButtonId
+            val radioButton: RadioButton = view.findViewById(intSelectButton)
+            val genderValue = radioButton.text
+
+            Toast.makeText(requireContext(),"Full Name: $fullNameValue",Toast.LENGTH_LONG ).show()
+            Toast.makeText(requireContext(),"Email: $emailValue",Toast.LENGTH_LONG ).show()
+            Toast.makeText(requireContext(),"Gender: $genderValue",Toast.LENGTH_LONG ).show()
+            Toast.makeText(requireContext(),"Country: $spnCountryValue",Toast.LENGTH_LONG ).show()
+
+        }
 
 
 

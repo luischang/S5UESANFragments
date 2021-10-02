@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -8,9 +9,7 @@
 
 
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.RegistroFragment">
@@ -80,26 +79,6 @@
             android:text="@string/valrbtothers" />
     </RadioGroup>
 
-    <CheckBox
-        android:id="@+id/chkCar"
-        android:layout_width="111dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/valchkcar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnCountry" />
-
-    <CheckBox
-        android:id="@+id/chkLicense"
-        android:layout_width="160dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/valchklicense"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnCountry" />
-
     <Button
         android:id="@+id/btnSave"
         android:layout_width="338dp"
@@ -107,8 +86,9 @@
         android:layout_marginTop="8dp"
         android:text="@string/valbtnsave"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkLicense" />
+        app:layout_constraintTop_toBottomOf="@+id/spnCountry" />
 
     <Spinner
         android:id="@+id/spnCountry"
